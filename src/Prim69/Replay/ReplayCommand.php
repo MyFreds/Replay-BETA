@@ -22,12 +22,12 @@ class ReplayCommand extends Command implements PluginOwned{
 		parent::__construct(
 			"replay",
 			TF::AQUA,
-			TF::RED . "Usage: " . TF::GRAY . "/replay < | start <name> | save:stop <name> | watch <name> | delete <name> | list >"
+			TF::RED . "Usage: " . TF::GRAY . "/replay < start <name> | save:stop <name> | watch <name> | delete <name> | list >"
 		);
 		$this->setPermission("replay.command");
 	}
 
-	public function execute(CommandSender $sender, string $commandLabel, array $args){
+	public function execute(CommandSender $sender, string $commandLabel, array $args) : void{
 		if(!$sender instanceof Player){
 			$sender->sendMessage(TF::DARK_RED . "Use this command in game!");
 			return;
